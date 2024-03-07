@@ -31,6 +31,10 @@ form.addEventListener("submit", (event) => {
     content.innerHTML = "NÃO É PRIMO";
   } else if (validationNum(result.numberPerFive)) {
     content.innerHTML = "NÃO É PRIMO";
+  } else if (Number.isInteger(Math.sqrt(number))) {
+    content.innerHTML = "NÃO É PRIMO";
+  } else if (Number.isInteger(Math.cbrt(number, 1 / 3))) {
+    content.innerHTML = "NÃO É PRIMO";
   } else {
     content.innerHTML = "É PRIMO";
   }
