@@ -5,6 +5,9 @@ const content = document.getElementById("result");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  content.style.visibility = "visible";
+  content.textContent = "Buscando resposta...";
+  
   let number = parseInt(input.value);
   let divisor = 0;
 
@@ -12,10 +15,13 @@ form.addEventListener("submit", (event) => {
     if (number % count == 0) {
       divisor++;
     }
-    if (divisor == 2) {
-      content.innerHTML = "É PRIMO!"
-    } else {content.innerHTML = "NÃO É PRIMO!"}
   }
-
-  content.style.visibility = "visible";
+  
+  setTimeout(() => {
+    if (divisor == 2) {
+      content.textContent = "É PRIMO!";
+    } else {
+      content.textContent = "NÃO É PRIMO!";
+    }
+  }, 1000); // 1 second
 });
