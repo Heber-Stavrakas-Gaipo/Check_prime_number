@@ -14,7 +14,15 @@
     <div id="app">
       <h1>Verificar número primo</h1>
       <form id="form" action="">
-        <input type="number" id="number" placeholder="número" />
+        <input
+          type="number"
+          id="number"
+          placeholder="Number"
+          min="0"
+          oninput="setCustomValidity('')"
+          oninvalid="this.setCustomValidity('O valor deve ser maior ou igual a zero. Vale lembrar que essa verificação é válida tanto para os números positivos, quanto para seus respectivos valores negativos.')"
+          required
+        />
         <button title="Verificar">
           <span class="material-symbols-outlined"> chevron_right </span>
         </button>
