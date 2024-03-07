@@ -22,18 +22,29 @@
         <input
           type="number"
           id="number"
-          placeholder="Number"
+          placeholder="Número"
           min="0"
-          max="10510100500"
           oninput="setCustomValidity('')"
-          oninvalid="this.setCustomValidity('O valor deve ser maior que zero e menor que 10.510.100.500! Vale lembrar que essa verificação é válida tanto para os números positivos, quanto para seus respectivos valores negativos.')"
+          oninvalid="this.setCustomValidity('O valor deve ser maior ou igual a zero. Vale lembrar que essa verificação é válida tanto para os números positivos, quanto para seus respectivos valores negativos.')"
           required
         />
         <button title="Verificar">
           <span class="material-symbols-outlined"> chevron_right </span>
         </button>
       </form>
-      <h2 id="result"></h2>
+      <p id="result"></p>
+      <div id="obs">
+        <h2>OBS:</h2>
+        <ul>
+          <li>
+            Esta é uma aplicação desenvolvida para facilitar a consulta de
+            números primos que comumente aparecem em operações matemáticas, não
+            tendo a finalidade de entregar resultados rápidos de números
+            excessivamente grandes.
+          </li>
+          <li>Números excessivamente grandes podem quebrar a aplicação.</li>
+        </ul>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
