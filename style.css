@@ -39,19 +39,23 @@ body {
     margin: 1rem;
 }
 
-#app > h1, #obs > h2 {
+#app > h1,
+#obs > h2 {
     color: #ffffff;
 }
 
 #app > #result {
-    margin-bottom: 6.4rem;
-    margin-top: 1rem;
     font-size: 3rem;
     height: 3rem;
-    border: 3px solid black;
     padding: 2rem;
-    border-radius: 30px;
     visibility: hidden;
+}
+
+#app > #result,
+div#obs {
+    background-color: #1c2126;
+    border: 3px solid #000;
+    border-radius: 12px;
 }
 
 #form {
@@ -107,9 +111,6 @@ div#obs {
     justify-content: center;
     align-items: center;
     max-width: 50rem;
-
-    background-color: #1c2126;
-    border: 3px solid #000;
 }
 
 div#obs > ul > li {
