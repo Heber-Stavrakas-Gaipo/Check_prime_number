@@ -65,9 +65,10 @@ body {
 
 #app > #result {
     font-size: 3rem;
-    height: 3rem;
+    height: fit-content;
     padding: 2rem;
     visibility: hidden;
+    text-align: center;
 }
 
 #app > #result,
@@ -75,6 +76,20 @@ div#obs {
     background-color: #1c2126;
     border: 3px solid #000;
     border-radius: 12px;
+}
+
+#check {
+    background-color: green;
+    color: white;
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+#wrong {
+    background-color: red;
+    color: white;
+    height: 2.4rem;
+    width: 2.4rem;
 }
 
 #form {
