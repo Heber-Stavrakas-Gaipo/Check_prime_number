@@ -12,12 +12,22 @@ form.addEventListener("submit", (event) => {
   content.textContent = "Buscando resposta...";
 
   const primeNumber = (increment) => {
+    if (increment == undefined) {
+      return (content.innerHTML = `PRIMO <span id="check" class="material-symbols-outlined">
+      check
+      </span>`);
+    }
     return (content.innerHTML = `PRIMO <span id="check" class="material-symbols-outlined">
   check
-  </span>`);
+  </span> ${increment}`);
   };
 
   const notPrimeNumber = (increment) => {
+    if (increment == undefined) {
+      return (content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
+      close
+      </span>`);
+    }
     return (content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
   close
   </span> ${increment}`);
