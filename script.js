@@ -11,10 +11,20 @@ form.addEventListener("submit", (event) => {
   content.style.visibility = "visible";
   content.textContent = "Buscando resposta...";
 
+  const primeNumber = (increment) => {
+    return (content.innerHTML = `PRIMO <span id="check" class="material-symbols-outlined">
+  check
+  </span>`);
+  };
+
+  const notPrimeNumber = (increment) => {
+    return (content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
+  close
+  </span> ${increment}`);
+  };
+
   if (number == 0) {
-    return content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
-    close
-    </span> </br> O número zero possui infinitos divisores!`;
+    return notPrimeNumber(`</br> O número zero possui infinitos divisores!`);
   }
 
   for (let count = 1; count <= number; count++) {
@@ -28,13 +38,9 @@ form.addEventListener("submit", (event) => {
 
   setTimeout(() => {
     if (divisor == 2) {
-      return content.innerHTML = `PRIMO <span id="check" class="material-symbols-outlined">
-      check
-      </span>`;
+      return primeNumber();
     } else {
-      return content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
-      close
-      </span>`;
+      return notPrimeNumber();
     }
   }, 500); // 1 second
 });
