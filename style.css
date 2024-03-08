@@ -11,7 +11,7 @@ body {
     color: #fff;
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -28,9 +28,27 @@ body {
     justify-content: center;
 }
 
+#app #logo {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-size: 6rem;
+    font-style: normal;
+    margin: 1.6rem 0 1rem;
+    padding: 0;
+    text-decoration: underline;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+}
+
 #app > h1 {
     font-size: 3.4rem;
-    margin: 1rem 0 0;
+    margin: 0;
     text-align: center;
 }
 
@@ -113,6 +131,10 @@ div#obs {
     align-items: center;
     max-width: 50rem;
     margin: 0 1rem;
+}
+
+div#obs > ul {
+    padding: 0 .5rem 0 3.5rem;
 }
 
 div#obs > ul > li {
