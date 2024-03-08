@@ -7,21 +7,24 @@ form.addEventListener("submit", (event) => {
 
   content.style.visibility = "visible";
   content.textContent = "Buscando resposta...";
-  
+
   let number = parseInt(input.value);
   let divisor = 0;
 
   for (let count = 1; count <= number; count++) {
     if (number % count == 0) {
       divisor++;
+      if (divisor > 2) {
+        break;
+      }
     }
   }
-  
+
   setTimeout(() => {
     if (divisor == 2) {
       content.textContent = "É PRIMO!";
     } else {
       content.textContent = "NÃO É PRIMO!";
     }
-  }, 1000); // 1 second
+  }, 500); // 1 second
 });
