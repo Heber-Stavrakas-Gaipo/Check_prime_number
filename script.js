@@ -3,9 +3,7 @@ const input = document.querySelector("#number");
 const content = document.getElementById("result");
 
 document.addEventListener("input", () => {
-  if (input.value == "") {
-    content.style.visibility = "hidden";
-  }
+  content.style.visibility = "hidden";
 });
 
 form.addEventListener("submit", (event) => {
@@ -52,11 +50,9 @@ form.addEventListener("submit", (event) => {
     }
   }
 
-  setTimeout(() => {
-    if (divisor == 2) {
-      return primeNumber();
-    } else {
-      return notPrimeNumber();
-    }
-  }, 500); // 1 second
+  if (divisor == 2) {
+    return primeNumber();
+  } else {
+    return notPrimeNumber();
+  }
 });
