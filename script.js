@@ -2,6 +2,12 @@ const form = document.getElementById("form");
 const input = document.querySelector("#number");
 const content = document.getElementById("result");
 
+document.addEventListener("input", () => {
+  if (input.value == "") {
+    content.style.visibility = "hidden";
+  }
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
