@@ -2,6 +2,11 @@ const form = document.getElementById("form");
 const input = document.querySelector("#number");
 const content = document.getElementById("result");
 
+const generateOutput = (message, type, icon, increment = "") => {
+  const iconHTML = `<span id=${type} class="material-symbols-outlined">${icon}</span>`;
+  content.innerHTML = `${message} ${iconHTML} </br> ${increment}`;
+};
+
 document.addEventListener("input", () => {
   content.style.visibility = "hidden";
 });
@@ -13,32 +18,9 @@ form.addEventListener("submit", (event) => {
   let divisor = 0;
 
   content.style.visibility = "visible";
-  content.textContent = "Buscando resposta...";
-
-  const primeNumber = (increment) => {
-    if (increment == undefined) {
-      return (content.innerHTML = `PRIMO <span id="check" class="material-symbols-outlined">
-      check
-      </span>`);
-    }
-    return (content.innerHTML = `PRIMO <span id="check" class="material-symbols-outlined">
-  check
-  </span> ${increment}`);
-  };
-
-  const notPrimeNumber = (increment) => {
-    if (increment == undefined) {
-      return (content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
-      close
-      </span>`);
-    }
-    return (content.innerHTML = `NÃO PRIMO <span id="wrong" class="material-symbols-outlined">
-  close
-  </span> ${increment}`);
-  };
 
   if (number == 0) {
-    return notPrimeNumber(`</br> O número zero possui infinitos divisores!`);
+    return generateOutput("NÃO PRIMO", "wrong", "close", "O número zero possui infinitos divisores!");
   }
 
   for (let count = 1; count <= number; count++) {
@@ -51,8 +33,8 @@ form.addEventListener("submit", (event) => {
   }
 
   if (divisor == 2) {
-    return primeNumber();
+    return generateOutput("PRIMO", "check", "check");
   } else {
-    return notPrimeNumber();
+    return generateOutput("NÃO PRIMO", "wrong", "close");
   }
 });
